@@ -1,12 +1,14 @@
 "use client";
 
-import Header from "@/components/Header";
+import Footer from "../Footer";
+import HeaderBar from "../HeaderBar";
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Header />
+      <HeaderBar />
       {children}
+      <Footer />
     </>
   );
 };
