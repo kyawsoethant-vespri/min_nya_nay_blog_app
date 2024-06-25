@@ -1,3 +1,4 @@
+import { Colors } from "@/constants";
 import { BorderColor } from "@mui/icons-material";
 import { Button, InputBase, ListItem, alpha, styled } from "@mui/material";
 
@@ -8,14 +9,14 @@ export const ListItemDrawer = styled(ListItem)({
   borderRadius: "15px",
   color: "white",
   "&:hover": {
-    backgroundColor: "#313f45",
+    backgroundColor: Colors.bgColor,
     cursor: "pointer",
   },
 });
 
 export const StyledLinkTextLogo = styled("span")({
   "&:hover": {
-    color: "gold",
+    color: Colors.color,
     cursor: "pointer",
   },
 });
@@ -23,7 +24,7 @@ export const StyledLinkTextLogo = styled("span")({
 export const StyledLink = styled("span")({
   padding: "20px",
   "&:hover": {
-    color: "gold",
+    color: Colors.color,
     cursor: "pointer",
   },
 });

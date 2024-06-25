@@ -1,5 +1,4 @@
 "use client";
-
 import Footer from "../Footer";
 import HeaderBar from "../HeaderBar";
 

@@ -19,8 +19,7 @@ import {
   StyledLink,
   StyledLinkTextLogo,
 } from "./style";
-import { AccountCircle } from "@mui/icons-material";
-import { Menu, MenuItem } from "@mui/material";
+import { usePathname, useSearchParams } from "next/navigation";
 
 interface Props {
   window?: () => Window;
@@ -36,6 +35,8 @@ const navItems = [
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const pathname = usePathname();
+  console.log({ pathname });
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
