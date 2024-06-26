@@ -1,5 +1,4 @@
 "use client";
-import Footer from "../Footer";
 import HeaderBar from "../HeaderBar";
 
 const Container = ({ children }: { children: React.ReactNode }) => {
@@ -7,7 +6,6 @@ const Container = ({ children }: { children: React.ReactNode }) => {
     <>
       <HeaderBar />
       {children}
-      <Footer />
     </>
   );
 };

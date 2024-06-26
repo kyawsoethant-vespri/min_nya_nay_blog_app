@@ -4,9 +4,18 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { BackgroundTypography } from "./style";
 import CommonContainedButton from "@/components/common/utils/Button/CommonContainedButton";
+import { useRouter } from "next/navigation";
 
 const Admin = () => {
-  const { control } = useForm();
+  const router = useRouter();
+  const { handleSubmit, control } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log({ data });
+    if (data) {
+      router.push("/dashboard");
+    }
+  };
 
   return (
     <Container maxWidth="md">
@@ -17,14 +26,13 @@ const Admin = () => {
               Min Nya Nay's <span style={{ color: "gold" }}>Blog</span>
             </BackgroundTypography>
             <Typography sx={{ paddingTop: "20px", fontFamily: "cursive" }}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea culpa
-              ab quas. Nobis facere dolorum nemo recusandae eaque delectus aut,
-              laboriosam rem! Saepe distinctio dolore, harum similique id
-              perferendis quidem!
+              Welcome to Min Nya Nay's Blog – a space where words weave stories,
+              ideas ignite conversations, and the love for literature comes to
+              life.
             </Typography>
           </Grid>
           <Grid item xs={6}>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <Grid container spacing={4}>
                 <Grid item xs={12}>
                   <FormControl
@@ -50,6 +58,7 @@ const Admin = () => {
                   <CommonContainedButton
                     btnText="Sign in"
                     size={"small"}
+                    type="submit"
                     fullwidth
                   />
                 </Grid>
