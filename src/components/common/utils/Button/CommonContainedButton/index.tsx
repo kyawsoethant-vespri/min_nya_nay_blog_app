@@ -7,13 +7,17 @@ const CommonContainedButton: React.FC<CommonContainedButtonProps> = ({
   variant,
   fullwidth,
   size,
+  startIcon,
+  endIcon,
 }) => {
   return (
     <Button
+      type={type}
       variant={variant ? variant : "contained"}
       fullWidth={fullwidth ?? false}
       size={size ?? "medium"}
-      type={type}
+      startIcon={startIcon ?? ""}
+      endIcon={endIcon ?? ""}
     >
       {btnText}
     </Button>

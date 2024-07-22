@@ -1,10 +1,15 @@
 "use client";
-import FormControl from "@/components/common/utils/FormHelper/FormControl";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { BackgroundTypography } from "./style";
+import {
+  BackgroundTypography,
+  RegisterTypography,
+  StyledLinkText,
+} from "./style";
 import CommonContainedButton from "@/components/common/utils/Button/CommonContainedButton";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import FormControl from "@/components/common/utils/FormHelper/FormControl";
 
 const Admin = () => {
   const router = useRouter();
@@ -19,7 +24,7 @@ const Admin = () => {
 
   return (
     <Container maxWidth="md">
-      <Box mt={20}>
+      <Box mt={25}>
         <Grid container spacing={15}>
           <Grid item xs={6}>
             <BackgroundTypography variant="h4" sx={{ boxShadow: 10 }}>
@@ -61,6 +66,19 @@ const Admin = () => {
                     type="submit"
                     fullwidth
                   />
+                </Grid>
+
+                <Grid
+                  item
+                  xs={12}
+                  style={{ display: "flex", flexDirection: "row" }}
+                >
+                  <RegisterTypography>
+                    Don't have an account?
+                  </RegisterTypography>
+                  <Link href={"/register"}>
+                    <StyledLinkText>Register</StyledLinkText>
+                  </Link>
                 </Grid>
               </Grid>
             </form>
